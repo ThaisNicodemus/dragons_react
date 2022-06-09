@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import home from './dragon.home.png';
 import '../theme.css';
 import './login.css';
+import { AuthContext } from "../../contexts/auth";
 
 
 
 
 const LoginPage = () => {
+    const { authenticated, login } = useContext (AuthContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -14,12 +16,14 @@ const LoginPage = () => {
         evt.preventDefault();
 
         console.log('submit', {email, password});
+        login(email, password); // integração com meu auth e api
     };
     return (
         <div id="login" className="App-background flex w100">
             <div className="block w50 jContentCenter">
                 <img src={home} className="img-home" alt="logo" />
                 <p>choose your dragons!</p>
+                <p>{String(authenticated)}</p> 
             </div>
             <div id="form" className="block w50 jContentCenter">
                 <form action="" className="loginForm w100" onSubmit={handleLogin}>

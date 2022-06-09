@@ -2,6 +2,7 @@ import React from "react";
 import '../theme.css';
 import './dragon.css';
 import image from './dragon.png';
+import FooterAdd from '../FooterAdd';
 
 
 const DragonPage = () => {
@@ -29,6 +30,7 @@ const DragonPage = () => {
                 </div>
 
             </div>
+            <FooterAdd />
         </div>
     )
 }
