@@ -14,7 +14,7 @@ const LoginPage = () => {
                 <p>choose your dragons!</p>
             </div>
             <div id="form" className="block w50 jContentCenter">
-                <form action="" className="loginForm">
+                <form action="" className="loginForm w100">
                     <div id="userLogin" className="field">
                         <label htmlFor="userName"></label>
                         <input type="email" className="userName" name="userName" placeholder="email" />
@@ -26,9 +26,13 @@ const LoginPage = () => {
                     </div>
 
                     <div className="actions">
-                        <button type="submit">Enter</button>
+                        <button type="submit">Choose Now!</button>
                     </div>
                 </form>
+
+                <div className="info">
+                    <p>You are automatically registered by entering your email and password</p>
+                </div>
             </div>
         </div>
     );

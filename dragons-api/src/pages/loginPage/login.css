@@ -7,3 +7,37 @@ p {
     margin: 0;
     font-weight: 700;
 }
+
+input {
+    width: 50%;
+    height: 40px;
+    border: 1px solid darkgrey;
+    border-radius: 8px;
+    padding: 0 6px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 25%;
+    height: 40px;
+    border: 1px solid darkgrey;
+    border-radius: 8px;
+    padding: 0 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background: rgb(52, 45, 45);
+    color: white;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+}
+
+button:hover {
+    letter-spacing: 3.5px;
+    
+}
+
+.info p {
+    font-weight: 100;
+    font-size: 15px;
+    margin-top: 15px;
+}
