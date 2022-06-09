@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
 }
+html {
+    box-sizing: border-box;
+}
+*, 
+*:before, 
+*:after {
+    box-sizing: inherit;
+}
 .App-background {
     background-color: #c093f3;
     min-height: 85vh;
