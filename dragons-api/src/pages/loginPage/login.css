@@ -1,0 +1,9 @@
+.img-home {
+    width: 60%;
+    pointer-events: none;
+}
+
+p {
+    margin: 0;
+    font-weight: 700;
+}

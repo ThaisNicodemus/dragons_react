@@ -1,0 +1,34 @@
+.App-background {
+    background-color: #c093f3;
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
+    color: rgb(52, 45, 45);
+    text-align: center;
+}
+
+.dragon-link {
+    color: #61dafb;
+}
+
+/* Conatainer's Layout */
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.jContentCenter {
+    justify-content: center;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.w50 {
+    width: 50%;
+}
