@@ -1,0 +1,39 @@
+.App-background {
+    background-color: #d4beed;
+}
+.dragonBox {
+    margin: 25px 0;
+}
+.icon-home {
+    width: 70%;
+}
+.dragon-characters {
+    padding: 0 25px;
+}
+.description {
+    color: #0095ff;
+    font-weight: 800;
+    margin: 0 10px;
+} 
+.dragonName,
+.birthDate, 
+.dragonType {
+    color: darkslategray;
+    font-weight: 500;
+}
+
+/* RESPONSIVITY */
+@media only screen and (max-width: 960px) { 
+    /* styles for browsers smaller than 960px; */ 
+    .dragonBox {
+        justify-content: center;
+        align-items: center;
+    }
+    .dragon-characters {
+        margin: 15px 0;
+    }
+    .dragonImage {
+        order: 2;
+        margin: 15px 0;
+    }
+} 

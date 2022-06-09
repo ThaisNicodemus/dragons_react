@@ -4,7 +4,7 @@
 }
 .App-background {
     background-color: #c093f3;
-    min-height: 100vh;
+    min-height: 85vh;
     font-size: calc(10px + 2vmin);
     color: rgb(52, 45, 45);
     text-align: center;
@@ -20,7 +20,9 @@
 .flex {
     display: flex;
 }
-
+.aItemsCenter {
+    align-items: center;
+}
 .jContentCenter {
     justify-content: center;
 }
@@ -31,4 +33,29 @@
 
 .w50 {
     width: 50%;
+}
+
+/* BUTTONS AND INPUTS */
+
+input {
+    height: 40px;
+    border: 1px solid darkgrey;
+    border-radius: 8px;
+    padding: 0 6px;
+}
+
+button {
+    height: 40px;
+    border: 1px solid darkgrey;
+    border-radius: 8px;
+    padding: 0 6px;
+    font-size: 14px;
+    background: rgb(52, 45, 45);
+    color: white;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+}
+
+button:hover {
+    letter-spacing: 3.5px;
 }

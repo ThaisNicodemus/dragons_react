@@ -9,7 +9,7 @@ import './login.css';
 const LoginPage = () => {
     return (
         <div id="login" className="App-background flex w100">
-            <div className="block w50">
+            <div className="block w50 jContentCenter">
                 <img src={home} className="img-home" alt="logo" />
                 <p>choose your dragons!</p>
             </div>
@@ -31,7 +31,8 @@ const LoginPage = () => {
                 </form>
 
                 <div className="info">
-                    <p>You are automatically registered by entering your email and password</p>
+                    <p>You are automatically registered by entering your email and password.</p>
+                    <p>Você será automaticamente registrado ao inserir seu email e senha.</p>
                 </div>
             </div>
         </div>

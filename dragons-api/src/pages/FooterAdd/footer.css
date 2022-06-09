@@ -1,0 +1,30 @@
+.footer-background{
+    padding: 15px 0;
+}
+h1 {
+    color: #8022eb;
+    margin-right: 10px;
+}
+input {
+    margin: 0 6px;
+}
+button {
+    margin: 0 6px;
+    width: 140%;
+}
+
+/* RESPONSIVITY */
+@media only screen and (max-width: 960px) { 
+    /* styles for browsers smaller than 960px; */ 
+    .flex{
+        flex-direction: column;
+    }
+    .addDragonForm {
+        width: 100%;
+    }
+
+    input, button {
+        margin: 15px 0;
+        width: 100%;
+    }
+} 
