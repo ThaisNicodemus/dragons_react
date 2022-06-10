@@ -11,11 +11,13 @@ export const AuthProvider = ({ children }) => {
     const login = (email, password) => {
         console.log("login auth", { email, password });
 
-        if (password === "dragon") {
-            setUser({id: "123", email})
+        // Senha mocada!
+        if (password !== "dragon") {
+            return false;
         }
-        setUser({ id: "123", email });
-        navigate("/home");
+        setUser({ id: "001", email });
+        
+        return true;        
     };
 
     const logout = () => {

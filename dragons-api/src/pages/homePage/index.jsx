@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import axios from "axios";
 import icon from './dragon.icon.png';
 import '../theme.css';
 import './home.css';
-import DragonPage from '../dragonPage/index.jsx';
 import FooterAdd from '../FooterAdd';
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+    const [dragonList, setDragonList] = useState([]);
+    const navigate = useNavigate();
+    const handleClick = (name) => {
+        navigate(`/dragon/${name}`, {state:{name}});
+    };
+
+    const getDragons = useCallback(async () => {
+        const response = await axios.get("http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon");
+        // console.log(response.data);
+        setDragonList(response.data);
+    }, [setDragonList]);
+
+    useEffect(() => {
+        getDragons();
+    }, [getDragons]);
+
     return (
         <div id="login" className="App-background">
             <div>
@@ -14,13 +31,15 @@ const HomePage = () => {
 
             <div>
                 <ul>
-                    <li className="w100 flex jContentCenter aItemsCenter">
-                        <button className="dragon-button flex jContentCenter aItemsCenter">
-                            <img src={icon} className="icon-home" alt="logo" />
-                            Dragão boladão!
-                        </button>
-                    </li>
-                    
+                    {dragonList.map((dragon) => (
+                        <li className="w100 flex jContentCenter aItemsCenter" key={dragon.id}>
+                            <button className="dragon-button flex jContentCenter aItemsCenter" type="button" onClick={()=>handleClick(dragon.name)}>
+                                <img src={icon} className="icon-home" alt="logo" />
+                                {dragon.name}
+                            </button>
+                        </li>
+                    ))
+                    }
                 </ul>
             </div>
             <FooterAdd />
