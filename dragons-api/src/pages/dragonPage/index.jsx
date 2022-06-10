@@ -63,29 +63,31 @@ const DragonPage = () => {
                         <h2>{dragon.name}</h2>
                     </div>
                     <div className="createDate flex w100 mb25">
-                        <p className="description">Birth Date:</p>
+                        <p className="description mr10">Birth Date:</p>
                         <p className="birthDate">{dragon.createdAt}</p>
                     </div>
                     <div className="dragon-type flex w100 mb25">
-                        <p className="description">Characteristics:</p>
+                        <p className="description mr10">Characteristics:</p>
                         <p className="dragonType">{dragon.type}</p>
                     </div>
                 </div>
             </div>
-            <div className="m25">
+            <div className="delete-button m25">
                 <button type="button" onClick={() => handleDeleteDragon(dragon.id)}>Delete Dragon!</button>
+                <p className="warningMessage">Warning! This action will delete your Dragon permanently.</p>
+                <p className="warningMessage">Atenção! está ação irá deletear seu dragão permanentemente.</p>
             </div>
 
             <div className="dragon-edit w100 block">
-                <h3 className="m25">Edit Dragon</h3>
+                <h3 className="description m25">Edit Dragon</h3>
                 <form>
                     <div className="dragon-name flex w100 mb25 jContentCenter aItemsCenter">
-                        <p className="">Dragon Name:</p>
+                        <p className="mr10">Dragon Name:</p>
                         <input type="text" placeholder="New Name" value={dragonName || ""} onChange={evt => setDragonName(evt.target.value)}></input>
                         <label for="newName" className="" />
                     </div>
                     <div className="dragon-type flex w100 mb25 jContentCenter aItemsCenter">
-                        <p className="">Characteristics::</p>
+                        <p className="mr10">Characteristics:</p>
                         <input type="text" placeholder="New Characteristics:" value={dragonType || ""} onChange={evt => setDragonType(evt.target.value)}></input>
                         <label for="newName" className="" />
                     </div>

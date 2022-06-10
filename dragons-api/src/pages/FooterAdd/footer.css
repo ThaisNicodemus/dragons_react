@@ -21,14 +21,15 @@ h1 {
         flex-direction: column;
     }
     .addDragonForm {
-        width: 100%;
+        width: 70%;
     }
-
     .dragonCreateForm input {
         margin: 15px 0;
         width: 100%;
     }
-
+    .createDragonField {
+        width: 70%;
+    } 
     .createDragonButton button {
         margin: 15px 0;
         width: 100%;

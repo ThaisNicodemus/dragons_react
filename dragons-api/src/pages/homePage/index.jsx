@@ -33,10 +33,10 @@ const HomePage = () => {
             <div>
                 <ul>
                     {dragonList.map((dragon) => (
-                        <li className="w100 flex jContentStart aItemsCenter" key={dragon.id}>
+                        <li className="w100 flex jContentCenter aItemsCenter" key={dragon.id}>
                             <button className="dragon-button flex jContentCenter aItemsCenter" type="button" onClick={()=>handleClick(dragon.id)}>
                                 <img src={icon} className="icon-home" alt="logo" />
-                                {dragon.name}
+                                <p>{dragon.name}</p>
                             </button>
                         </li>
                     ))
