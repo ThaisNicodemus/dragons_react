@@ -1,10 +1,8 @@
 import React, { useState, useContext } from "react";
 import home from './dragon.home.png';
-import '../theme.css';
 import './login.css';
+import '../theme.css';
 import { AuthContext } from "../../contexts/auth";
-
-
 
 
 const LoginPage = () => {
@@ -23,7 +21,7 @@ const LoginPage = () => {
             <div className="block w50 jContentCenter">
                 <img src={home} className="img-home" alt="logo" />
                 <p>choose your dragons!</p>
-                <p>{String(authenticated)}</p> 
+                {/* <p>{String(authenticated)}</p>  */}
             </div>
             <div id="form" className="block w50 jContentCenter">
                 <form action="" className="loginForm w100" onSubmit={handleLogin}>
