@@ -28,7 +28,7 @@ const LoginPage = () => {
             <div className="block w50 jContentCenter">
                 <img src={home} className="img-home" alt="logo" />
                 <p>choose your dragons!</p>
-                <p>{String(authenticated)}</p> 
+                {/* <p>{String(authenticated)}</p> usado pra testes */}
             </div>
             <div id="form" className="block w50 jContentCenter">
                 <form action="" className="loginForm w100" onSubmit={handleLogin}>
