@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
             return false;
         }
         setUser({ id: "001", email });
+        localStorage.setItem('user', JSON.stringify(user));
         
         return true;        
     };
@@ -23,6 +24,7 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         console.log("logout");
         setUser(null);
+        localStorage.removeItem('user');
         navigate("/login");
     };
 

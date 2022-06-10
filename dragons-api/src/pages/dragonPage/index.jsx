@@ -4,37 +4,63 @@ import '../theme.css';
 import './dragon.css';
 import image from './dragon.png';
 import FooterAdd from '../FooterAdd';
-import { useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 
 const DragonPage = () => {
-    const location = useLocation();
+    const params = useParams();
+    const navigate = useNavigate();
     const [dragon, setDragon] = useState({});
+    const [dragonName, setDragonName] = useState(null);
+    const [dragonType, setDragonType] = useState(null);
     const getDragon = useCallback(async () => {
-        const name = location.state.name;
-        const response = await axios.get(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/?name=${name}`);
+        const id = params.id;
+        const response = await axios.get(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`);
         console.log(response.data);
-        setDragon(response.data[0]);
+        setDragon(response.data);
         // console.log(location);
-    }, [setDragon, location]);
+    }, [setDragon, params]);
 
     useEffect(() => {
         getDragon();
     }, [getDragon]);
 
+    const handleUpdateDragon = useCallback(async () => {
+        const id = params.id;
+        const data = {};
+        if (dragonName) {
+            data.name = dragonName;
+        };
+        if (dragonType) {
+            data.type = dragonType;
+        };
+        console.log(data);
+        const response = await axios.put(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, data);
+        const { name, type } = response.data;
+        setDragonName("");
+        setDragonType("");
+        setDragon({ ...dragon, name, type });
+        // console.log(response.data); Teste de retorno
+        // alert(`${dragonName}, ${dragonType}`) Teste de retorno
+    }, [params, dragonName, dragonType, setDragonName, setDragonType, dragon, setDragon]);
+
+    const handleDeleteDragon = useCallback(async (id) => {
+        const response = await axios.delete(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`);
+        console.log(response.data);
+        navigate(`/home`);
+    }, [navigate]);
 
     return (
         <div id="login" className="App-background">
-            <h1>Your Dragon!</h1>
+            <h1>Dragon Selected!</h1>
             <div className="dragonBox flex w100">
                 <div className="dragonImage block w50">
                     <img src={image} className="icon-home" alt="logo" />
                 </div>
 
                 <div className="dragon-characters w50 block jContentCenter">
-                    <div className="dragon-name flex w100 mb25">
-                        <p className="description">Dragon Name:</p>
-                        <p className="dragonName">{dragon.name}</p>
+                    <div className="flex w100 mb25">
+                        <h2>{dragon.name}</h2>
                     </div>
                     <div className="createDate flex w100 mb25">
                         <p className="description">Birth Date:</p>
@@ -47,25 +73,27 @@ const DragonPage = () => {
                 </div>
             </div>
             <div className="m25">
-                <button>Edit Dragon</button>
+                <button type="button" onClick={() => handleDeleteDragon(dragon.id)}>Delete Dragon!</button>
             </div>
-            {/* <div className="dragon-edit w100 block">
+
+            <div className="dragon-edit w100 block">
+                <h3 className="m25">Edit Dragon</h3>
                 <form>
                     <div className="dragon-name flex w100 mb25 jContentCenter aItemsCenter">
                         <p className="">Dragon Name:</p>
-                        <input type="text" placeholder="New Name"></input>
+                        <input type="text" placeholder="New Name" value={dragonName || ""} onChange={evt => setDragonName(evt.target.value)}></input>
                         <label for="newName" className="" />
                     </div>
                     <div className="dragon-type flex w100 mb25 jContentCenter aItemsCenter">
                         <p className="">Characteristics::</p>
-                        <input type="text" placeholder="New Characteristics:"></input>
+                        <input type="text" placeholder="New Characteristics:" value={dragonType || ""} onChange={evt => setDragonType(evt.target.value)}></input>
                         <label for="newName" className="" />
                     </div>
                     <div className="m25">
-                        <button>Save it!</button>
+                        <button type="button" onClick={handleUpdateDragon}>Save it!</button>
                     </div>
                 </form>
-            </div> */}
+            </div>
             <FooterAdd />
         </div>
     )

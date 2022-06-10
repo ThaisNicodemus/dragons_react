@@ -34,6 +34,9 @@ html {
 .jContentCenter {
     justify-content: center;
 }
+.jContentStart {
+    justify-content: flex-start;
+}
 
 .w100 {
     width: 100%;

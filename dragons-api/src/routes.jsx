@@ -13,8 +13,9 @@ import { AuthProvider, AuthContext } from "./contexts/auth";
 const AppRoutes = () => {
     const Private = ({children}) => {
         const { authenticated } = useContext(AuthContext);
+        const userLogged = localStorage.getItem('user');
 
-        if(!authenticated) {
+        if(!authenticated && !userLogged) {
             return <Navigate to='/login' />;
         }
 
@@ -26,7 +27,7 @@ const AppRoutes = () => {
                 <Routes>
                     <Route exact path="/login" element={<LoginPage/>} />
                     <Route exact path="/home" element={<Private><HomePage/></Private>} />
-                    <Route exact path="/dragon/:name" element={<DragonPage/>} />
+                    <Route exact path="/dragon/:id" element={<Private><DragonPage/></Private>} />
                 </Routes>
             </AuthProvider>
         </Router>

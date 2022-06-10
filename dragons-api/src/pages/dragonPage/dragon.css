@@ -23,8 +23,8 @@
 }
 
 /* RESPONSIVITY */
-@media only screen and (max-width: 960px) { 
-    /* styles for browsers smaller than 960px; */ 
+@media only screen and (max-width: 1200px) { 
+    /* styles for browsers smaller than 1200px; */ 
     .dragonBox {
         justify-content: center;
         align-items: center;
