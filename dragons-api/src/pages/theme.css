@@ -12,7 +12,7 @@ html {
 }
 .App-background {
     background-color: #c093f3;
-    min-height: 85vh;
+    min-height: 100vh;
     font-size: calc(10px + 2vmin);
     color: rgb(52, 45, 45);
     text-align: center;
@@ -66,4 +66,12 @@ button {
 
 button:hover {
     letter-spacing: 3.5px;
+}
+
+/* MARGIN AND PADDINGS */
+.m25 {
+    margin: 25px 25px 25px 25px;
+}
+.mb25 {
+    margin-bottom: 25px;
 }

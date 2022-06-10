@@ -8,16 +8,21 @@ import FooterAdd from '../FooterAdd';
 const HomePage = () => {
     return (
         <div id="login" className="App-background">
-            <h1>Choose Your Dragon!</h1>
-            <ul>
-                <li>
-                    <a href={DragonPage} className="dragon-link">
-                        <img src={icon} className="icon-home" alt="logo" />
+            <div>
+                <h1>Choose Your Dragon!</h1>
+            </div>
+
+            <div>
+                <ul>
+                    <li className="w100 flex jContentCenter aItemsCenter">
+                        <button className="dragon-button flex jContentCenter aItemsCenter">
+                            <img src={icon} className="icon-home" alt="logo" />
+                            Dragão boladão!
+                        </button>
+                    </li>
                     
-                    Dragão boladão!
-                    </a>
-                </li>
-            </ul>
+                </ul>
+            </div>
             <FooterAdd />
         </div>
     )

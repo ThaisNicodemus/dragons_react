@@ -9,12 +9,20 @@ h1 {
     font-weight: 700;
     text-decoration: none;
 }
-.dragon-link img {
-    width: 7%;
+
+.dragon-button {
+    background: none;
+    border: none;
+    color: black;
+    height: 110px;
+    margin-bottom: 20px;
+}
+.dragon-button img {
+    width: 10%;
     box-shadow: 16px 24px 50px -1px rgb(0 0 0 / 75%);
     border-radius: 80px;
     margin-right: 20px;
 }
-.dragon-link:hover {
+.dragon-button:hover {
     letter-spacing: 3.5px;
 }

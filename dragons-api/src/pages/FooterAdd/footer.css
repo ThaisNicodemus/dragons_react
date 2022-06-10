@@ -1,16 +1,17 @@
 .footer-background{
+    background: whitesmoke;
     padding: 15px 0;
 }
 h1 {
     color: #8022eb;
     margin-right: 10px;
 }
-input {
+.createDragonField input {
     margin: 0 6px;
 }
-button {
+.createDragonButton button {
     margin: 0 6px;
-    width: 30%;
+    width: 100%;
 }
 
 /* RESPONSIVITY */
@@ -23,7 +24,12 @@ button {
         width: 100%;
     }
 
-    input, button {
+    .dragonCreateForm input {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .createDragonButton button {
         margin: 15px 0;
         width: 100%;
     }
